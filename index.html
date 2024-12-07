@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Trucking Dispatcher Tycoon</title>
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-sA+e2vyH3IhQecPYLWfr3x9S30F6+pHrnZx58+7mZmo="
+  crossorigin=""/>
+
+<style>
+  html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+  }
+
+  #map {
+    width: 100%;
+    height: 100%;
+  }
+
+  #game-ui {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    background: rgba(255,255,255,0.8);
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  #game-ui h1 {
+    margin: 0 0 10px;
+    font-size: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<div id="game-ui">
+  <h1>Trucking Dispatcher Tycoon</h1>
+  <p>Use your mouse or touch to pan and zoom around the US map.</p>
+  <p>Future improvements will include:
+     <ul>
+       <li>Adding depots</li>
+       <li>Dispatching trucks</li>
+       <li>Managing finances and routes</li>
+     </ul>
+  </p>
+</div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-o9N1j4x2yu++qz1fPRGe53fMZl6lGLQp/g8mb7r6Z9o="
+  crossorigin=""></script>
+
+<script>
+  // Initialize the Leaflet map
+  var map = L.map('map').setView([37.1, -95.7], 4);
+
+  // Add OpenStreetMap tile layer
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap contributors'
+  }).addTo(map);
+</script>
+</body>
+</html>
